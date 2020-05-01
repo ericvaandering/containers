@@ -23,11 +23,6 @@ echo "Starting Jobber"
 sleep 5
 
 echo
-echo "============= Jobber jobs ================="
-
-jobber list
-
-echo
 echo "============= Jobber log file ============="
 
 tail -f /var/log/jobber-runs
