@@ -42,4 +42,9 @@ VOLUME /etc/grid-security
 
 EXPOSE 443
 
+## Fix for user switching (update in 1.22 or hopefully fixed later)
+ADD https://raw.githubusercontent.com/ericvaandering/rucio/restrict_reaper_1_21/lib/rucio/web/ui/common/utils.py /usr/lib/python2.7/site-packages/rucio/web/ui/common/utils.py
+RUN python -m compileall /usr/lib/python2.7/site-packages/rucio/web/ui/common
+
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
